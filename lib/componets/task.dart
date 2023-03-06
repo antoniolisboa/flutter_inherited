@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
 class Task extends StatelessWidget {
-  const Task({super.key});
+  final String taskName;
+  final String taskDescription;
+
+  const Task({
+    super.key,
+    required this.taskName,
+    required this.taskDescription,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +20,7 @@ class Task extends StatelessWidget {
       child: Container(
         height: 175,
         decoration: BoxDecoration(
-          color: Colors.lightBlue[400],
+          color: Colors.blue[100],
           borderRadius: BorderRadius.circular(5),
         ),
         child: Padding(
@@ -22,18 +29,18 @@ class Task extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Title',
-                style: TextStyle(
-                  color: Colors.white,
+              Text(
+                taskName,
+                style: const TextStyle(
+                  color: Colors.blue,
                   fontSize: 30,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
-              const Text(
-                'Lorem ipsum dolor sit amet sdgfgdf gfdagfg',
-                style: TextStyle(
-                  color: Colors.white,
+              Text(
+                taskDescription,
+                style: const TextStyle(
+                  color: Colors.blue,
                   fontSize: 18,
                   overflow: TextOverflow.ellipsis,
                 ),
@@ -46,11 +53,11 @@ class Task extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(90),
+                          borderRadius: BorderRadius.circular(5),
                         )),
                     child: const Icon(
                       Icons.edit,
-                      color: Colors.black54,
+                      color: Colors.blue,
                     ),
                   ),
                   const SizedBox(width: 10),
@@ -59,11 +66,11 @@ class Task extends StatelessWidget {
                     style: OutlinedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(90),
+                          borderRadius: BorderRadius.circular(5),
                         )),
                     child: const Icon(
                       Icons.delete,
-                      color: Colors.black54,
+                      color: Colors.blue,
                     ),
                   ),
                 ],

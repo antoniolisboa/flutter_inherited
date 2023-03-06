@@ -13,7 +13,16 @@ class HomeScreen extends StatelessWidget {
       drawer: const TaskDrawer(),
       body: ListView(
         children: const [
-          Task(),
+          Task(
+            taskName: 'Learning Inglesh',
+            taskDescription:
+                'Aprendendo o verbo to be e aumentando o meu vocabulário.',
+          ),
+          Task(
+            taskName: 'Aprender Flutter',
+            taskDescription:
+                'Construindo meus primeiros aplicativos em flutter.',
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
