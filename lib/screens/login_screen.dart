@@ -35,7 +35,7 @@ class LoginScreen extends StatelessWidget {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushReplacementNamed(context, '/home');
+                        Navigator.pushNamed(context, '/home');
                       },
                       child: const Padding(
                         padding: EdgeInsets.all(14),

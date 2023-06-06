@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_inherited/componets/task.dart';
-import 'package:flutter_inherited/componets/task_drawer.dart';
+import 'package:flutter_inherited/components/task_drawer.dart';
+import 'package:flutter_inherited/data/task_list_inherited.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,21 +12,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(),
       drawer: const TaskDrawer(),
       body: ListView(
-        children: const [
-          Task(
-            taskName: 'Learning Inglesh',
-            taskDescription:
-                'Aprendendo o verbo to be e aumentando o meu vocabulário.',
-          ),
-          Task(
-            taskName: 'Aprender Flutter',
-            taskDescription:
-                'Construindo meus primeiros aplicativos em flutter.',
-          ),
-        ],
+        children: TaskListInherited.of(context).taskList,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/newTask');
+        },
         child: const Icon(Icons.add),
       ),
     );
